@@ -1,0 +1,27 @@
+$date-picker-elements-padding: 3px;
+
+.date-picker {
+    > div {
+        float: left;
+    }
+
+    > div:not(:first-child) {
+        padding-left: $date-picker-elements-padding;
+    }
+
+    > div:not(:last-child) {
+        padding-right: $date-picker-elements-padding;
+    }
+
+    > .mui-select {
+        margin-bottom: 0;
+    }
+
+    .date-picker-day, .date-picker-year {
+        width: 28%;
+    }
+
+    .date-picker-month {
+        width: 44%;
+    }
+}

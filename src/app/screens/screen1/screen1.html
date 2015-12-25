@@ -1,0 +1,101 @@
+<div class="info-panel simple-show-hide" ng-show="screen1.invalidFields.length > 0">
+     There are errors in the following fields: {{ screen1.invalidFields.join(', ') }}
+</div>
+<div class="mui-container-fluid">
+    <div class="mui-row">
+        <div class="mui-col-xs-12 mui--text-center module-title">
+            Please fill up those fields
+        </div>
+    </div>
+    <form name="form" novalidate>
+        <div class="mui-row form">
+            <div class="mui-col-xs-12 mui-col-sm-6 left-column">
+                <div>
+                    <div class="mui-textfield" ng-class="{invalid: (form.name.$touched || screen1.submitted) && !screen1.form.name}">
+                        <input type="text" id="form-name" name="name" ng-model="screen1.form.name">
+                        <label ng-click="screen1.focus('#form-name')">Name</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.name.$touched || screen1.submitted) && !screen1.form.name">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-textfield" ng-class="{invalid: (form.surname.$touched || screen1.submitted) && !screen1.form.surname}">
+                        <input type="text" id="form-surname" name="surname" ng-model="screen1.form.surname">
+                        <label ng-click="screen1.focus('#form-surname')">Surname</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.surname.$touched || screen1.submitted) && !screen1.form.surname">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-textfield" ng-class="{invalid: (form.idNumber.$touched || screen1.submitted) && !screen1.form.idNumber}">
+                        <input type="text" id="form-id-number" name="idNumber" ng-model="screen1.form.idNumber">
+                        <label ng-click="screen1.focus('#form-id-number')">ID number</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.idNumber.$touched || screen1.submitted) && !screen1.form.idNumber">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-textfield" ng-class="{invalid: (form.occupation.$touched || screen1.submitted) && !screen1.form.occupation}">
+                        <input type="text" id="form-occupation" name="occupation" ng-model="screen1.form.occupation">
+                        <label ng-click="screen1.focus('#form-occupation')">Occupation</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.occupation.$touched || screen1.submitted) && !screen1.form.occupation">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+            </div>
+            <div class="mui-col-xs-12 mui-col-sm-6 right-column">
+                <div>
+                    <div class="mui-select" ng-class="{invalid: (form.gender.$touched || screen1.submitted) && !screen1.form.gender}">
+                        <select ng-model="screen1.form.gender" name="gender" id="form-gender">
+                            <option value="">Choose</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                        </select>
+                        <label ng-click="screen1.focus('#form-gender')">Gender</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.gender.$touched || screen1.submitted) && !screen1.form.gender">
+                        <span class="icon-font_icons-validation-warning"></span> Please select one of the options
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-row labeled-element" ng-class="{invalid: !screen1.dateValid}">
+                        <div class="mui-col-xs-12">
+                            <date-picker min-year="1900" max-year="2015" model="screen1.form.birthDate" control="screen1.dateValidator" valid-handler="screen1.dateValidHandler"></date-picker>
+                        </div>
+                        <label>Date of birth</label>
+                    </div>
+                    <div class="validation-info" ng-show="!screen1.dateValid">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-textfield" ng-class="{invalid: (form.address.$touched || screen1.submitted) && !screen1.form.address}">
+                        <input type="text" id="form-address" name="address" ng-model="screen1.form.address">
+                        <label ng-click="screen1.focus('#form-address')">Address</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.address.$touched || screen1.submitted) && !screen1.form.address">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+                <div>
+                    <div class="mui-textfield" ng-class="{invalid: (form.city.$touched || screen1.submitted) && !screen1.form.city}">
+                        <input type="text" id="form-city" name="city" ng-model="screen1.form.city">
+                        <label ng-click="screen1.focus('#form-city')">City</label>
+                    </div>
+                    <div class="validation-info" ng-show="(form.city.$touched || screen1.submitted) && !screen1.form.city">
+                        <span class="icon-font_icons-validation-warning"></span> Please fill the missing information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mui-row">
+            <div class="mui-col-xs-12 confirmation">
+                <button class="mui-btn submit" ng-click="screen1.submitForm()" ng-class="{ disabled : !screen1.formValid() }">SUBMIT <span class="icon-font_icons-check"></span></button>
+            </div>
+        </div>
+    </form>
+</div>

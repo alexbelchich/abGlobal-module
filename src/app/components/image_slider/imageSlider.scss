@@ -1,0 +1,121 @@
+.slider-image {
+    position: relative;
+    width: 100%;
+    display: block;
+    padding: 0 5px;
+}
+
+.images-container {
+    position: relative;
+}
+
+.slider-img-holder {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+    img {
+        width: 100%;
+    }
+}
+
+.image-circle {
+    border-radius: 50%;
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+}
+
+.left-img-holder, .right-img-holder {
+    position: absolute;
+    bottom: 0;
+}
+
+.left-img-holder {
+    left: 0;
+}
+
+.right-img-holder {
+    right: 0;
+}
+
+.slider-container {
+    width: 100%;
+    float: left;
+//    min-height: 75px;
+}
+
+/* change default styles for rzslider*/
+
+rzslider {
+    margin-top: 20px !important;
+}
+
+rzslider span.rz-pointer,
+rzslider span.rz-pointer:before,
+rzslider span.rz-pointer.rz-active:before {
+    background-color: #00AEF3;
+
+    @media (max-width: 400px) {
+        font-size: 40px;
+    }
+
+    @media (min-width: 401px) and (max-width: 550px) {
+        font-size: 50px;
+    }
+}
+
+rzslider span.rz-pointer:active,
+rzslider span.rz-pointer:hover,
+rzslider span.rz-pointer:focus,
+rzslider span.rz-active:active,
+rzslider span.rz-active:hover,
+rzslider span.rz-active:focus{
+    outline-color: transparent !important;
+}
+
+rzslider span.rz-bar {
+    height: 5px;
+    border-radius: 4px;
+    background-color: #bababa;
+    width: 99% !important;
+    border: 1px solid lightgray;
+}
+
+rzslider .rz-bubble.rz-limit {
+    top: 15px;
+}
+
+rzslider span.rz-pointer {
+    width: 50px;
+    height: 50px;
+    border-radius: 35px;
+    top: -22px !important;
+
+    @media (max-width: 400px) {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        top: -13px !important;
+    }
+
+    @media (min-width: 401px) and (max-width: 550px) {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        top: -17px !important;
+    }
+}
+
+rzslider .rz-bubble {
+    color: #fff !important;
+    opacity: 0 !important;
+}
+
+rzslider span.rz-pointer.rz-active:after {
+    background-color: transparent !important;
+}
+
+rzslider span.rz-pointer:after{
+    display: none;
+}

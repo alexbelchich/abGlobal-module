@@ -1,0 +1,17 @@
+<div class="slider-image" ng-style="{'height': imageSlider.setContainerSize() + 'px'}">
+    <div class="images-container" ng-style="{'height': imageSlider.getMaxSize() + 'px'}">
+        <div class="slider-img-holder left-img-holder" ng-style="imageSlider.zoom().first">
+            <img alt="" ng-src={{imageSlider.src.first}}>
+        </div>
+
+        <div class="slider-img-holder right-img-holder" ng-style="imageSlider.zoom().second">
+            <img alt="" ng-src={{imageSlider.src.second}}>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <rzslider rz-slider-model="imageSlider.slider.value"
+                  rz-slider-options="imageSlider.slider.options"></rzslider>
+    </div>
+</div>
+

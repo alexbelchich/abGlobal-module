@@ -1,0 +1,13 @@
+/dist_epub
+/dist_app
+/src/app/scripts/efl-discovery.min.js
+node_modules/
+bower_components/
+coverage/
+.sass-cache/
+.idea/
+.tmp/
+appDev/
+appDist/
+epubDev/
+epubDist/

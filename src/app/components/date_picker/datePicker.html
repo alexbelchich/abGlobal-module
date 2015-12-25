@@ -1,0 +1,20 @@
+<div class="date-picker">
+    <div class="mui-select date-picker-day" ng-class="{invalid: (datePicker.dayTouched || datePicker.wasValidate) && (datePicker.day === undefined || datePicker.day === '')}">
+        <select ng-model="datePicker.day" ng-focus="datePicker.focused('day')">
+            <option value="">Day</option>
+            <option ng-repeat="day in datePicker.range(1, 31)" value="{{day}}">{{day}}</option>
+        </select>
+    </div>
+    <div class="mui-select date-picker-month" ng-class="{invalid: (datePicker.monthTouched || datePicker.wasValidate) && (datePicker.month === undefined || datePicker.month === '')}">
+        <select ng-model="datePicker.month" ng-focus="datePicker.focused('month')">
+            <option value="">Month</option>
+            <option ng-repeat="month in datePicker.range(1, 12)" value="{{month}}">{{datePicker.monthsString[month-1]}}</option>
+        </select>
+    </div>
+    <div class="mui-select date-picker-year" ng-class="{invalid: (datePicker.yearTouched || datePicker.wasValidate) && (datePicker.year === undefined || datePicker.year === '')}">
+        <select ng-model="datePicker.year" ng-focus="datePicker.focused('year')">
+            <option value="">Year</option>
+            <option ng-repeat="year in datePicker.revRange(minYear, maxYear)" value="{{year}}">{{year}}</option>
+        </select>
+    </div>
+</div>
