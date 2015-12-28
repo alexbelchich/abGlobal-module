@@ -6,13 +6,12 @@
         .controller('DoneController', DoneController);
 
     /** @ngInject */
-    function DoneController($scope, NavigationService, ObservationsService) {
+    function DoneController($scope, NavigationService, ObservationsService, DiscoveryService) {
         var vm = this;
-        vm.screenName = 'doneScreen';
-
         var listener = $scope.$on('willDisplayNextScreen', function () {
-            vm.storeAdditionalData();
+            vm.finishModule();
         });
+
         $scope.$on('$destroy', function () {
             listener();
         });
@@ -21,10 +20,13 @@
             NavigationService.showPreviousScreen();
         };
 
-        vm.storeAdditionalData = function () {
-            ObservationsService.addMetaData('meta1.part1', 'meta value 1');
-            ObservationsService.addMetaData('meta1.part2', 'meta value 2');
-            ObservationsService.addStateValue('state1', 'state value 1');
+        vm.finishModule = function () {
+            var observations = ObservationsService.getObservations(),
+                metas = ObservationsService.getMetaData(),
+                applicant = ObservationsService.getApplicantData(),
+                state = ObservationsService.getStateValues();
+
+            DiscoveryService.finishedModule(observations, metas, applicant, state);
         };
     }
 })();

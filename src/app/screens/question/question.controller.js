@@ -6,7 +6,7 @@
         .controller('QuestionController', QuestionController);
 
     /** @ngInject */
-    function QuestionController(data, $scope, ObservationsService) {
+    function QuestionController(data, $scope, ObservationsService, TimerService) {
         var vm = this;
         vm.screenName = data.screenName;
         vm.src = data.src;
@@ -26,9 +26,21 @@
         };
 
         vm.storeAdditionalData = function () {
-            ObservationsService.addMetaData('meta1.part1', 'meta value 1');
-            ObservationsService.addMetaData('meta1.part2', 'meta value 2');
-            ObservationsService.addStateValue('state1', 'state value 1');
+            TimerService.getTimerTime().then(function (time) {
+                vm.updateMetaTime(time);
+                ObservationsService.addObservations(vm.type + '.timeElapsed', time);
+                ObservationsService.addObservations(vm.type + '.responseValue', vm.sliderValue);
+                ObservationsService.addObservations(vm.type + '_idu', (vm.idu) ? 1 : 0);
+                ObservationsService.addObservations(vm.type + 'Metadata', {});
+            });
+        };
+
+        vm.updateMetaTime = function (time) {
+            var prevTime = ObservationsService.getMetaData();
+            if (angular.isDefined(prevTime) && angular.isDefined(prevTime.timeElapsed)) {
+                time += prevTime['timeElapsed'];
+            }
+            ObservationsService.addMetaData('timeElapsed', time);
         };
     }
 })();
