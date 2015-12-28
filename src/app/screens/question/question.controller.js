@@ -8,7 +8,6 @@
     /** @ngInject */
     function QuestionController(data, $scope, ObservationsService, TimerService) {
         var vm = this;
-        vm.screenName = data.screenName;
         vm.src = data.src;
         vm.type = data.type;
         vm.sliderValue = 0;

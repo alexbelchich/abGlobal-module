@@ -131,7 +131,6 @@
 
     function questionData (num) {
         return {
-            screenName: 'questionScreen' + num,
             type: 'abGlobal0' + num,
             src: {
                 first: 'assets/images/question' + num + '-1.png',
