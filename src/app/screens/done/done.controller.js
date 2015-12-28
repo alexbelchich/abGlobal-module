@@ -24,12 +24,12 @@
         });
 
         vm.finishModule = function () {
-            var observations = ObservationsService.getObservations(),
-                metas = ObservationsService.getMetaData(),
-                applicant = ObservationsService.getApplicantData(),
-                state = ObservationsService.getStateValues();
+            vm.observations = ObservationsService.getObservations();
+            vm.metas = ObservationsService.getMetaData();
+            vm.applicant = ObservationsService.getApplicantData();
+            vm.state = ObservationsService.getStateValues();
 
-            DiscoveryService.finishedModule(observations, metas, applicant, state);
+            DiscoveryService.finishedModule(vm.observations, vm.metas, vm.applicant, vm.state);
         };
 
         vm.changeBg = function () {
