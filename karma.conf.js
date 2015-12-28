@@ -42,7 +42,7 @@ module.exports = function(config) {
 
     logLevel: 'WARN',
 
-    frameworks: ['mocha', 'chai', 'angular-filesort'],
+    frameworks: ['mocha', 'chai-spies', 'chai', 'angular-filesort'],
 
     angularFilesort: {
       whitelist: [path.join(conf.paths.src, '/**/!(*.html|*.spec|*.mock).js')]
@@ -55,6 +55,7 @@ module.exports = function(config) {
       'karma-angular-filesort',
       'karma-coverage',
       'karma-mocha',
+      'karma-chai-spies',
       'karma-chai',
       'karma-ng-html2js-preprocessor'
     ],

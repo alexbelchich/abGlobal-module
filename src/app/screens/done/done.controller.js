@@ -6,7 +6,7 @@
         .controller('DoneController', DoneController);
 
     /** @ngInject */
-    function DoneController($scope, ObservationsService, DiscoveryService, ModuleTimerService, $log) {
+    function DoneController($scope, ObservationsService, DiscoveryService, ModuleTimerService) {
         var vm = this;
         var listener = $scope.$on('willDisplayNextScreen', function () {
             vm.finishModule();

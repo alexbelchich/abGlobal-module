@@ -8,9 +8,6 @@
     /** @ngInject */
     function IntroController($scope, NavigationService, ObservationsService, ModuleTimerService) {
         var vm = this;
-        vm.screenName = 'introScreen';
-        vm.timeelapsed = 0;
-        vm.maxTime = 15;
 
         ModuleTimerService.startTimer();
 
