@@ -564,6 +564,31 @@ body {
     }
 }
 
+.finish-screen {
+    background-color: #1bd830;
+    color: #000;
+    overflow: auto;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.done-check {
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    -webkit-border-radius: 200px;
+    -moz-border-radius: 200px;
+}
+
+.done-check .icon-font_icons-check {
+    font-size: 70px;
+    position: relative;
+    top: 60px;
+    color: #1bd830;
+    left: -5px;
+}
+
 
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */
