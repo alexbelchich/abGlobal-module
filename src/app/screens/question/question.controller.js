@@ -6,7 +6,7 @@
         .controller('QuestionController', QuestionController);
 
     /** @ngInject */
-    function QuestionController(data, $scope, NavigationService, ObservationsService) {
+    function QuestionController(data, $scope, ObservationsService) {
         var vm = this;
         vm.screenName = data.screenName;
         vm.src = data.src;
