@@ -426,6 +426,128 @@ body {
     cursor: pointer;
 }
 
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.intro-text {
+    padding: 30px 0;
+
+    @media (max-height: 650px) {
+        padding: 20px 0;
+    }
+}
+
+.world-image {
+    width: 350px;
+    height: 350px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: $mui-screen-lg-min)  {
+        width: 450px !important;
+        height: 450px !important;
+    }
+
+    @media (min-width: $mui-screen-md-min) and (max-width: 1199px) {
+        width: 400px !important;
+        height: 400px !important;
+    }
+
+    @media (min-width: $mui-screen-sm-min) and (max-width: 991px) {
+        width: 370px !important;
+        height: 370px !important;
+    }
+
+    @media (min-width: 730px) and (max-width: 767px) {
+        width: 330px !important;
+        height: 330px !important;
+    }
+
+    @media (min-width: 700px) and (max-width: 729px) {
+        width: 320px !important;
+        height: 320px !important;
+    }
+
+    @media (min-width: 670px) and (max-width: 699px) {
+        width: 310px !important;
+        height: 310px !important;
+    }
+
+    @media (min-width: 640px) and (max-width: 669px) {
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    @media (min-width: 610px) and (max-width: 639px) {
+        width: 290px !important;
+        height: 290px !important;
+    }
+
+    @media (min-width: 580px) and (max-width: 609px) {
+        width: 280px !important;
+        height: 280px !important;
+    }
+
+    @media (min-width: 550px) and (max-width: 579px) {
+        width: 270px !important;
+        height: 270px !important;
+    }
+
+    @media (min-width: 520px) and (max-width: 549px) {
+        width: 260px !important;
+        height: 260px !important;
+    }
+
+    @media (min-width: $mui-screen-xs) and (max-width: 509px) {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    @media (min-width: 450px) and (max-width: 479px) {
+        width: 240px !important;
+        height: 240px !important;
+    }
+
+    @media (min-width: 420px) and (max-width: 449px) {
+        width: 230px !important;
+        height: 230px !important;
+    }
+
+    @media (min-width: 390px) and (max-width: 419px) {
+        width: 220px !important;
+        height: 220px !important;
+    }
+
+    @media (min-width: 360px) and (max-width: 389px) {
+        width: 210px !important;
+        height: 210px !important;
+    }
+
+    @media (min-width: 330px) and (max-width: 359px) {
+        width: 200px !important;
+        height: 200px !important;
+    }
+
+    @media (min-width: 300px) and (max-width: 329px) {
+        width: 190px !important;
+        height: 190px !important;
+    }
+
+    @media (max-width: 328px) {
+        width: 150px !important;
+        height: 150px !important;
+    }
+}
+
 .idu-container {
     background-color: #ddd;
     padding: 10px;
