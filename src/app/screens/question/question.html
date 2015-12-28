@@ -11,7 +11,9 @@
 </image-slider>
 
 <div class="idu-container">
-    <span class="fa" ng-model="question.idu" ng-click="question.check()"
-          ng-class="{'fa-square-o': !question.idu, 'fa-check-square-o': question.idu}"></span>
-    <span translate="idu"></span>
+    <span class="cursor-pointer" ng-click="question.check()">
+        <span class="fa" ng-class="{'fa-square-o': !question.idu,
+        'fa-check-square-o': question.idu}"></span>
+        <span translate="idu"></span>
+    </span>
 </div>
