@@ -3,7 +3,6 @@
 
     angular
         .module('abGlobalModule')
-        .constant('one_second', 1000)
         .constant('EN_US', {
             intro: "World view",
             question: "How do people behave?",

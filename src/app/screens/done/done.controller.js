@@ -6,19 +6,22 @@
         .controller('DoneController', DoneController);
 
     /** @ngInject */
-    function DoneController($scope, NavigationService, ObservationsService, DiscoveryService, $log) {
+    function DoneController($scope, ObservationsService, DiscoveryService, ModuleTimerService, $log) {
         var vm = this;
         var listener = $scope.$on('willDisplayNextScreen', function () {
             vm.finishModule();
         });
 
+        vm.setModuleTime = function () {
+            vm.fullTime = ModuleTimerService.getFullTime();
+            ObservationsService.addMetaData('metas.timeElapsed', vm.fullTime);
+        };
+
+        vm.setModuleTime();
+
         $scope.$on('$destroy', function () {
             listener();
         });
-
-        vm.backAction = function () {
-            NavigationService.showPreviousScreen();
-        };
 
         vm.finishModule = function () {
             var observations = ObservationsService.getObservations(),
