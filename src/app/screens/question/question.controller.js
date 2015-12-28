@@ -12,6 +12,7 @@
         vm.src = data.src;
         vm.type = data.type;
         vm.sliderValue = 0;
+        vm.idu = false;
 
         var listener = $scope.$on('willDisplayNextScreen', function () {
             vm.storeAdditionalData();
@@ -19,6 +20,10 @@
         $scope.$on('$destroy', function () {
             listener();
         });
+
+        vm.check = function () {
+            vm.idu = !vm.idu;
+        };
 
         vm.storeAdditionalData = function () {
             ObservationsService.addMetaData('meta1.part1', 'meta value 1');

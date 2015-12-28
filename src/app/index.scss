@@ -371,6 +371,76 @@ body {
     font-style: normal;
 }
 
+/* font-awesome */
+
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../assets/font-awesome/fontawesome-webfont.eot?v=4.5.0');
+    src: url('../assets/font-awesome/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'),
+    url('../assets/font-awesome/fontawesome-webfont.woff2?v=4.5.0') format('woff2'),
+    url('../assets/font-awesome/fontawesome-webfont.woff?v=4.5.0') format('woff'),
+    url('../assets/font-awesome/fontawesome-webfont.ttf?v=4.5.0') format('truetype'),
+    url('../assets/font-awesome/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+    font-size: 1.33333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+.fa-2x {
+    font-size: 2em;
+}
+.fa-3x {
+    font-size: 3em;
+}
+.fa-4x {
+    font-size: 4em;
+}
+.fa-5x {
+    font-size: 5em;
+}
+.fa-7x {
+    font-size: 7em;
+}
+.fa-square-o:before {
+    content: "\f096";
+}
+.fa-check-square-o:before {
+    content: "\f046";
+}
+
+/* screens styles */
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.idu-container {
+    background-color: #ddd;
+    padding: 10px;
+
+    span.fa {
+        position: relative;
+        min-width: 25px;
+        top: 1px;
+    }
+
+    span {
+        font-size: 20px;
+    }
+}
+
 
 /* Do not remove the comments below. It's the markers used by gulp-inject to inject
    all your sass files automatically */

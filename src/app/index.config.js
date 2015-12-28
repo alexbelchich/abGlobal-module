@@ -6,11 +6,14 @@
         .config(config);
 
     /** @ngInject */
-    function config($logProvider, NavigationProviderProvider, $translateProvider, EN_US) {
+    function config($logProvider, NavigationProviderProvider, $translateProvider, EN_US, ES_PE, ES_MX) {
         // Enable log
         $logProvider.debugEnabled(true);
 
         $translateProvider.translations('en_US', EN_US);
+        $translateProvider.translations('es_PE', ES_PE);
+        $translateProvider.translations('es_MX', ES_MX);
+        $translateProvider.preferredLanguage('en_US');
 
         NavigationProviderProvider.setScreensList([
             {

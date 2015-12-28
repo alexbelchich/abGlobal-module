@@ -9,6 +9,18 @@
             question: "How do people behave?",
             idu: "I don't understand the image.",
             done: "Great Job!"
+        })
+        .constant('ES_PE', {
+            intro: "",
+            question: "",
+            idu: "",
+            done: ""
+        })
+        .constant('ES_MX', {
+            intro: "",
+            question: "",
+            idu: "",
+            done: ""
         });
 
 })();

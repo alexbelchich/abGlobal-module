@@ -6,7 +6,7 @@
         .service('DiscoveryService', DiscoveryService);
 
     /** @ngInject */
-    function DiscoveryService($window, $rootScope, $q, ConfigService) {
+    function DiscoveryService($window, $rootScope, $q, ConfigService, $translate) {
         var vm = this;
         var discovery = $window.EFLDiscoveryModule;
 
@@ -54,6 +54,13 @@
          */
         function changedLanguage(lang) {
             $rootScope.$broadcast('languageChanged', lang);
+            if (lang.match(/en/) || lang.match(/us/)) $translate.use('en_US');
+            if (lang.match(/pe/) || lang.match(/pem/) || lang.match(/es/)) {
+                $translate.use('es_PE');
+            }
+            if (lang.match(/mex/) || lang.match(/mx/) || lang.match(/es/)) {
+                $translate.use('es_MX');
+            }
         }
 
         /*

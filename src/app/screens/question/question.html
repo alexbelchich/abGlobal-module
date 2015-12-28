@@ -1,4 +1,4 @@
-<h3 class="mui--text-justify" translate="question"></h3>
+<h3 class="mui--text-center" translate="question"></h3>
 
 <image-slider model="question.sliderValue"
               slider-value="0"
@@ -9,3 +9,9 @@
               second-image="{{question.src.second}}"
               circle-images="false">
 </image-slider>
+
+<div class="idu-container">
+    <span class="fa" ng-model="question.idu" ng-click="question.check()"
+          ng-class="{'fa-square-o': !question.idu, 'fa-check-square-o': question.idu}"></span>
+    <span translate="idu"></span>
+</div>
